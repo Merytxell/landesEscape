@@ -1,0 +1,49 @@
+.carousel-container {
+    display: flex;
+    background-color: #A89384;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%; /* Ajuste la largeur ici (ex: 60%) */
+    height: 100px; /* Ajuste la hauteur ici (ex: 300px) */
+    margin: 0 auto;
+}
+
+button {
+    width: 5%;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.2);
+}
+
+.carousel {
+    width: 90%;
+}
+
+.carousel-inner {
+    text-align: center; 
+}
+
+.frame-item {
+    display: inline-block; 
+    padding: 20px;
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none; 
+    transition: all 0.3s ease;
+}
+
+.frame-item:hover {
+    background-color: var(--secondary-color-brown);
+}
+
+.search-input {
+    width: 200px; 
+    padding: 10px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+}

@@ -1,0 +1,30 @@
+<div class="carousel-container d-flex align-items-center justify-content-between mt-4 p-3">
+    <button class="btn-previous" type="button" data-bs-target="#itemCarousel" data-bs-slide="prev">
+        <svg width="40px" height="40px" viewBox="0 0 24 24" stroke-width="2.6" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffffff">
+            <path d="M13 8.5L9.5 12L13 15.5" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>    
+    </button>
+    <div id="itemCarousel" class="carousel slide" style="width: 70%;">
+        <div class="carousel-inner">
+            <div class="carousel-item" *ngFor="let chunk of chunks; let i = index" [ngClass]="{'active': i === 0}">
+                <div class="d-flex justify-content-between">
+                    <a class="frame-item rounded-2" *ngFor="let item of chunk" href="#">{{ item }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn-next" type="button" data-bs-target="#itemCarousel" data-bs-slide="next">
+        <svg width="40px" height="40px" viewBox="0 0 24 24" stroke-width="2.6" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffffff">
+            <path d="M11 8.5L14.5 12L11 15.5" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+    </button>
+    <mat-form-field class="example-full-width">
+        <mat-label>Villes landaises</mat-label>
+        <input type="text" matInput [(ngModel)]="searchTerm" (ngModelChange)="filterCities()" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredCities" [value]="option">{{ option }}</mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+</div>
